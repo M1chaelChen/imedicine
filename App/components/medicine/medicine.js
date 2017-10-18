@@ -8,7 +8,7 @@ const Medicine = (props) => {
   return (
     <Container style={{ backgroundColor: config.style.backgroundColor }}>
       <AppHeader
-        title="Dashboard"
+        title="Medicine"
         navigation={props.navigation}
       />
       <Content padder>

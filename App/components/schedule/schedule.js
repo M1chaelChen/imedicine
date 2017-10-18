@@ -9,7 +9,7 @@ const Schedule = (props) => {
   return (
     <Container style={{ backgroundColor: config.style.backgroundColor }}>
       <AppHeader
-        title="Dashboard"
+        title="Schedule"
         navigation={props.navigation}
       />
       <Content padder>
