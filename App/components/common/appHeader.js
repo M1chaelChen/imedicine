@@ -2,14 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Header, Title, Left, Icon, Right, Button, Body, Text } from 'native-base';
 
-const styles = StyleSheet.create({
-  buttonColor: {
-    color: '#007aff',
-  },
-});
-
 const AppHeader = props => (
-  <Header>
+  <Header {...props.hasTabs?hasTabs:undefined}>
       <Left>
       <Button
         transparent

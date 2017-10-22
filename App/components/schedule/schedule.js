@@ -7,24 +7,8 @@ import moment from 'moment';
 import  { _ } from 'underscore';
 
 import AppHeader from '../common/appHeader';
-import config from '../../config';
+import styles from '../../styles';
 import store from '../../store/store';
-
-const styles = StyleSheet.create({
-  item: {
-    backgroundColor: 'white',
-    flex: 1,
-    padding: 10,
-    marginRight: 10,
-    marginTop: 20,
-    borderRadius: 2
-  },
-  emptyDate: {
-    height: 15,
-    flex:1,
-    paddingTop: 40
-  }
-});
 
 class Schedule extends Component{
   constructor(props) {
@@ -83,7 +67,7 @@ class Schedule extends Component{
 
   render() {
     return (
-      <Container style={{ backgroundColor: config.style.backgroundColor }}>
+      <Container style={styles.appBackground}>
         <AppHeader 
           title='Schedule'
           navigation={this.props.navigation}

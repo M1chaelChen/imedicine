@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 
 import store from '../../store/store';
-import config from '../../config';
+import styles from '../../styles';
 import * as ActionTypes from '../actions/types';
 
 class Login extends Component {
@@ -30,7 +30,7 @@ class Login extends Component {
 
   render(){
     return(
-      <Container style={{backgroundColor:config.style.backgroundColor}}>
+      <Container style={styles.appBackground}>
         <Content padder>
           <Form>
             <Item>
@@ -38,7 +38,6 @@ class Login extends Component {
                 value={this.state.name}
                 onChangeText={text =>this.setState({name:text})}
                 placeholder="Name"
-                autoCapitalize={'none'}
                 autoCorrect={false}
               />
             </Item>
