@@ -6,6 +6,7 @@ import { NavigationActions } from 'react-navigation';
 
 import store from '../../store/store';
 import config from '../../config';
+import * as ActionTypes from '../actions/types';
 
 class Login extends Component {
   constructor(props) {
@@ -17,6 +18,13 @@ class Login extends Component {
   }
 
   handleSignin = () =>{
+    const { name, phone } = this.state;
+    const user = { name, phone };
+
+    store.dispatch({
+      type: ActionTypes.LOGIN,
+      user
+    })
     this.props.navigation.navigate('Home')
   }
 
@@ -36,7 +44,6 @@ class Login extends Component {
             </Item>
             <Item>
               <Input 
-                secureTextEntry
                 value={this.state.phone}
                 placeholder="Phone"
                 onChangeText={text =>this.setState({phone:text})} 
