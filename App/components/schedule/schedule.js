@@ -78,7 +78,7 @@ class Schedule extends Component{
   rowHasChanged = (r1, r2) => r1.title !== r2.title;
 
   handleTaskClick = (task) =>{
-    this.props.navigation.navigate('TaskDetail', { task });
+    //this.props.navigation.navigate('TaskDetail', { task });
   }
 
   render() {

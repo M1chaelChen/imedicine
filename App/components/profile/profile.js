@@ -5,11 +5,11 @@ import AppHeader from '../common/appHeader';
 import store from '../../store/store';
 import config from '../../config';
 
-const Medicine = (props) => {
+const Profile = (props) => {
   return (
     <Container style={{ backgroundColor: config.style.backgroundColor }}>
       <AppHeader
-        title="Medicine"
+        title="Profile"
         navigation={props.navigation}
       />
       <Content padder>
@@ -19,5 +19,5 @@ const Medicine = (props) => {
   );
 }
 
-export default connect(store => store)(Medicine)
+export default connect(store => store)(Profile)
 
