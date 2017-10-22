@@ -1,4 +1,5 @@
 import React from 'react';
+import { DatePickerIOS, View } from 'react-native';
 import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body, List, ListItem, Form, Item, Input, Label } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '../common/appHeader';
@@ -22,12 +23,24 @@ const AddMedicine = () => (
   <Content padder>
     <Form>
       <Item stackedLabel>
-        <Label>Username</Label>
+        <Label>Name</Label>
+        <Input />
+      </Item>
+      <Item stackedLabel>
+        <Label>description</Label>
+        <Input />
+      </Item>
+      <Item stackedLabel>
+        <Label>quantity</Label>
         <Input />
       </Item>
       <Item stackedLabel last>
-        <Label>Password</Label>
-        <Input />
+        <Label>time</Label>
+        <DatePickerIOS
+          date={new Date()} 
+          onDateChange={date => console.log(date)}
+          mode="datetime"
+        />
       </Item>
       <Button block>
         <Text>Add</Text>
