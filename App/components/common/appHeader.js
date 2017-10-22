@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Header, Title, Left, Icon, Right, Button, Body, Text } from 'native-base';
 
 const AppHeader = props => (
-  <Header {...props.hasTabs?hasTabs:undefined}>
+  <Header>
       <Left>
       <Button
         transparent

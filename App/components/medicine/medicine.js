@@ -1,16 +1,39 @@
 import React from 'react';
-import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body } from 'native-base';
+import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body, List, ListItem, Form, Item, Input, Label } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '../common/appHeader';
 import store from '../../store/store';
 import styles from '../../styles';
 
 const MyMedicine = () => (
-  <Text>MyMedicine</Text>
+  <Content>
+    <List>
+      <ListItem>
+        <Body>
+          <Text>Sankhadeep</Text>
+          <Text note>Its time to build a difference . .</Text>
+        </Body>
+      </ListItem>
+    </List>
+  </Content>
 )
 
 const AddMedicine = () => (
-  <Text>AddMedicine</Text>
+  <Content padder>
+    <Form>
+      <Item stackedLabel>
+        <Label>Username</Label>
+        <Input />
+      </Item>
+      <Item stackedLabel last>
+        <Label>Password</Label>
+        <Input />
+      </Item>
+      <Button block>
+        <Text>Add</Text>
+      </Button> 
+    </Form>
+  </Content>
 )
 
 const Medicine = (props) => {
