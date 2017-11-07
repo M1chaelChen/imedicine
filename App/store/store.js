@@ -1,8 +1,10 @@
 import { createStore,combineReducers } from 'redux'
 import UserReducer from '../reducers/user.js';
+import MedicineReducer from '../reducers/medicine.js';
 
 const reducers = combineReducers({
-    user:UserReducer
+    user:UserReducer,
+    medicine: MedicineReducer
 });
 
 const store = createStore(

@@ -18,17 +18,22 @@ class Schedule extends Component{
     };
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   loadItems = (day) => {
-    const schedule = this.props.schedule?this.props.schedule:null;
+    const schedule = this.props.medicine?this.props.medicine:null;
     for (let i = 0; i < 60; i++) {
       const strTime = moment(day.timestamp).add(i,'day').format('YYYY-MM-DD');
       this.state.items[strTime] = [];
-      //map tasks to agenda
-      _.each(_.filter(schedule,s => s.date == strTime), task=>{
+      //map schdule to agenda
+      _.each(_.filter(schedule,s => moment(s.time, 'YYYY-MM-DD h:mm a').format('YYYY-MM-DD') == strTime), medicine=>{
         this.state.items[strTime].push({
-          time: s.time,
-          title: s.title,
-          description: s.description,
+          time: medicine.time,
+          quantity: medicine.quantity,
+          name: medicine.name,
+          description: medicine.description,
           height:100,
         })
       })
@@ -44,8 +49,8 @@ class Schedule extends Component{
   renderItem = (item) => {
     return (
       <TouchableOpacity onPress={this.handleTaskClick.bind(this,item)} style={[styles.item, {height: item.height}]}>
-        <Text>{item.timeRange}</Text>
-        <Text numberOfLines={1} ellipsizeMode="tail">{item.title}</Text>
+        <Text>{item.time}</Text>
+        <Text numberOfLines={1} ellipsizeMode="tail">{item.name}</Text>
         <Text numberOfLines={1} ellipsizeMode="tail" note>{item.description}</Text>
       </TouchableOpacity>
     );
