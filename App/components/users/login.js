@@ -40,7 +40,7 @@ class Login extends Component {
     super(props);
     this.state = {
       name:'',
-      phone:''
+      password:''
     }
   }
 
@@ -52,8 +52,8 @@ class Login extends Component {
   }
 
   handleSignin = () =>{
-    const { name, phone } = this.state;
-    const user = { name, phone };
+    const { name, password } = this.state;
+    const user = { name, password };
 
     store.dispatch({
       type: ActionTypes.LOGIN,
@@ -70,21 +70,22 @@ class Login extends Component {
             <Item>
               <Input 
                 value={this.state.name}
-                onChangeText={text =>this.setState({name:text})}
+                onChangeText={name =>this.setState({ name })}
                 placeholder="Name"
                 autoCorrect={false}
               />
             </Item>
             <Item>
               <Input 
-                value={this.state.phone}
-                placeholder="Phone"
-                onChangeText={text =>this.setState({phone:text})} 
+                value={this.state.password}
+                placeholder="password"
+                onChangeText={password =>this.setState({ password })} 
               />
             </Item>
             <Button block onPress={this.handleSignin}>
               <Text>SIGN IN</Text>
-            </Button>                       
+            </Button>
+            <Text style={{padding: 10,alignSelf: 'center'}} onPress={() => this.props.navigation.navigate('Signup')}>Don't have an account?</Text>                        
           </Form>     
         </Content>
       </Container>

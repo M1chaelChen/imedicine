@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DatePickerIOS, View } from 'react-native';
+import { View } from 'react-native';
 import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body, List, ListItem, Form, Item, Input, Label, H2} from 'native-base';
 import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
@@ -101,14 +101,7 @@ class Medicine extends Component {
     return (
       <Container style={styles.appBackground}>
         <Header hasTabs>
-          <Left>
-          <Button
-            transparent
-            onPress={() => this.props.navigation.navigate('DrawerOpen')}
-          >
-            <Icon name="menu" />
-          </Button>
-          </Left>
+          <Left />
           <Body>
               <Title>Medicine</Title>
           </Body>

@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation';
 import Login from './login';
-//import Signup from './signup';
+import Signup from './signup';
 
 export default StackNavigator({
   Login: {
@@ -9,10 +9,10 @@ export default StackNavigator({
       header: null,
     },
   },
-  // Signup: {
-  //   screen: Signup,
-  //   navigationOptions: {
-  //     title: 'Create Account',
-  //   },
-  // },
+  Signup: {
+    screen: Signup,
+    navigationOptions: {
+      title: 'Create Account',
+    },
+  },
 });

@@ -5,12 +5,6 @@ import { Header, Title, Left, Icon, Right, Button, Body, Text } from 'native-bas
 const AppHeader = props => (
   <Header>
       <Left>
-      <Button
-        transparent
-        onPress={() => props.navigation.navigate('DrawerOpen')}
-      >
-        <Icon name="menu" />
-      </Button>
       </Left>
       <Body>
           <Title>{props.title}</Title>
