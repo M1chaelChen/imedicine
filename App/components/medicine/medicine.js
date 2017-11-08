@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Container, Header, Tab, SwipeRow, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body, List, ListItem, Form, Item, Input, Label, H2} from 'native-base';
+import { View, ScrollView} from 'react-native';
+import { Container, Header, Fab, Tab, SwipeRow, Tabs, TabHeading, Icon, Text, Content, Right , Left, Button, Title, Body, List, ListItem, Form, Item, Input, Label, H2} from 'native-base';
 import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
@@ -21,7 +21,8 @@ class Medicine extends Component {
   render() {
     return (
       <Container style={styles.appBackground}>
-        <Content>
+        <View style={{flex:1}}>
+          <ScrollView>
           {this.props.medicine.map((medicine, index) => (
             <SwipeRow
               key={index}
@@ -40,10 +41,14 @@ class Medicine extends Component {
                   <Icon name="trash" />
                 </Button>}
             />))}
-          <Button rounded style={{marginTop: 10, alignSelf:'center'}} onPress={() => this.props.navigation.navigate('AddMedicine')}>
-            <Text>Add</Text>
-          </Button>
-        </Content>
+          </ScrollView>
+          <Fab
+            style={{backgroundColor: '#2196F3'}}
+            onPress={() => this.props.navigation.navigate('AddMedicine')}
+          >
+            <Icon size={25} color="white" name="add" />
+          </Fab>
+        </View>
       </Container>
     );
   }
