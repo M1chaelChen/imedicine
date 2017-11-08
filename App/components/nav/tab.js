@@ -8,8 +8,8 @@ import MedicineStack from '../medicine';
 import ProfileStack from '../profile';
 
 export default TabNavigator({
-  ScheduleTab: { screen: ScheduleStack },
   MedicineTab: { screen: MedicineStack },
+  ScheduleTab: { screen: ScheduleStack },
   ProfileTab: { screen: ProfileStack },
 }, {
   tabBarPosition: 'bottom',
@@ -17,13 +17,13 @@ export default TabNavigator({
   tabBarComponent: props => (
     <Footer>
       <FooterTab>
-        <Button vertical onPress={() => props.navigation.navigate('ScheduleTab')}>
-          <Icon name="calendar" style={{ fontSize: 30 }} active={props.navigationState.index === 0} />
-          <Text>Schedule</Text>
-        </Button>
         <Button vertical onPress={() => props.navigation.navigate('MedicineTab')} >
-          <Icon name="list-box" style={{ fontSize: 30 }} active={props.navigationState.index === 1} />
+          <Icon name="list-box" style={{ fontSize: 30 }} active={props.navigationState.index === 0} />
           <Text>Medicine</Text>
+        </Button>
+        <Button vertical onPress={() => props.navigation.navigate('ScheduleTab')}>
+          <Icon name="calendar" style={{ fontSize: 30 }} active={props.navigationState.index === 1} />
+          <Text>Schedule</Text>
         </Button>
         <Button vertical onPress={() => props.navigation.navigate('ProfileTab')}>
           <Icon name="person" style={{ fontSize: 30 }} active={props.navigationState.index === 2} />

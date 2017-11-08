@@ -77,6 +77,7 @@ class Login extends Component {
             </Item>
             <Item>
               <Input 
+                secureTextEntry
                 value={this.state.password}
                 placeholder="password"
                 onChangeText={password =>this.setState({ password })} 
