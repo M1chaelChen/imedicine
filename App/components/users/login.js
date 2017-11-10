@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Alert} from 'react-native';
+import {StyleSheet, Alert, View} from 'react-native';
 import { Container, Header, Content, Button, Form, Text, Item, Input, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
@@ -64,30 +64,38 @@ class Login extends Component {
 
   render(){
     return(
-      <Container style={{backgroundColor: '#353445'}}>
-        <Content padder>
-          <Form>
+      <View style={{flex: 1,
+        backgroundColor: '#353445'}}>
+        <View style={{paddingTop:100, backgroundColor:'transparent'}}>
+          <Text style={{alignSelf:'center', fontSize:32, fontWeight:'bold', color:'white'}}>iMedicine</Text>
+        </View>
+        <View style={{paddingTop: 150, paddingHorizontal:20}}>
+          <Form style={{backgroundColor: 'transparent'}}>
             <Item>
-              <Input 
+              <Input
+                style={{color:'white'}}
                 value={this.state.name}
-                onChangeText={text =>this.setState({name:text})}
+                onChangeText={name =>this.setState({ name })}
                 placeholder="Name"
+                placeholderTextColor="#EEEEEE"
                 autoCorrect={false}
               />
             </Item>
             <Item>
-              <Input 
+              <Input
+                style={{color:'white'}}
                 value={this.state.phone}
-                placeholder="Phone"
-                onChangeText={text =>this.setState({phone:text})} 
+                placeholder="phone"
+                placeholderTextColor="#EEEEEE"
+                onChangeText={phone =>this.setState({ phone })} 
               />
             </Item>
-            <Button block onPress={this.handleSignin}>
+            <Button block rounded onPress={this.handleSignin} style={{marginTop:20, backgroundColor: '#3F51B5'}}>
               <Text>SIGN IN</Text>
-            </Button>                       
-          </Form>     
-        </Content>
-      </Container>
+            </Button>
+          </Form>  
+        </View>
+      </View>
     )
   }
 }

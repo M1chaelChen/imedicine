@@ -89,7 +89,7 @@ class Medicine extends Component {
             onDateChange={time => this.setState({ time })}
           />
         </Item>
-        <Button onPress={this.handleAddMedicine} block>
+        <Button style={{marginTop:15}} onPress={this.handleAddMedicine} block>
           <Text>Add</Text>
         </Button> 
       </Form>

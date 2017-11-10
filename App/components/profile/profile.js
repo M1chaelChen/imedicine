@@ -13,7 +13,8 @@ const Profile = (props) => {
   }
 
   return (
-    <Container>
+    <Container style={{
+      backgroundColor: '#353445'}}>
       <AppHeader
         title="Profile"
         navigation={props.navigation}
@@ -23,8 +24,6 @@ const Profile = (props) => {
         <Text style={styles.profileText}>{props.user.name} </Text>
         <Text style={styles.profilePhone} note>{props.user.phone} </Text>
         <List>
-          <Separator bordered>
-          </Separator>
           <ListItem last onPress={handleLogout}>
             <Text>Sign Out</Text>
           </ListItem>

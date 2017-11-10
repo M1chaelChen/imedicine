@@ -48,10 +48,10 @@ class Schedule extends Component{
 
   renderItem = (item) => {
     return (
-      <TouchableOpacity onPress={this.handleTaskClick.bind(this,item)} style={[styles.item, {height: item.height}]}>
-        <Text>{item.time}</Text>
-        <Text numberOfLines={1} ellipsizeMode="tail">{item.name}</Text>
-        <Text numberOfLines={1} ellipsizeMode="tail" note>{item.description}</Text>
+      <TouchableOpacity onPress={this.handleTaskClick.bind(this,item)} style={[styles.item, {height: item.height, backgroundColor: '#353445'}]}>
+        <Text style={{color:'white'}}>{item.time}</Text>
+        <Text style={{color:'white'}} numberOfLines={1} ellipsizeMode="tail">{item.name}</Text>
+        <Text style={{color:'white'}} numberOfLines={1} ellipsizeMode="tail" note>{item.description}</Text>
       </TouchableOpacity>
     );
   }

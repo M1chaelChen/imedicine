@@ -5,17 +5,21 @@ export default StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   center:{
+    marginTop:15,
     alignSelf:'center',
   },
   profileText:{
     alignSelf:'center',
+    color:'white',
     fontSize:20,
+    fontWeight: 'bold',
     marginTop:10,
   },
   profilePhone:{
     alignSelf:'center',
     fontSize:15,
     marginTop:10,
+    marginBottom: 20,
   },
   item: {
     backgroundColor: 'white',
