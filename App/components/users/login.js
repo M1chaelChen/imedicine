@@ -64,7 +64,7 @@ class Login extends Component {
 
   render(){
     return(
-      <Container style={styles.appBackground}>
+      <Container style={{backgroundColor: '#353445'}}>
         <Content padder>
           <Form>
             <Item>
