@@ -52,7 +52,6 @@ class Medicine extends Component {
       </Container>
     );
   }
-
 }
 
 export default connect(store => store)(Medicine)

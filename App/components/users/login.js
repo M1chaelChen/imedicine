@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {StyleSheet, Alert} from 'react-native';
+import {StyleSheet, Alert, View} from 'react-native';
 import { Container, Header, Content, Button, Form, Text, Item, Input, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 import PushNotification from 'react-native-push-notification';
+import LinearGradient from 'react-native-linear-gradient';
 
 import store from '../../store/store';
 import styles from '../../styles';
@@ -64,32 +65,49 @@ class Login extends Component {
 
   render(){
     return(
-      <Container style={styles.appBackground}>
-        <Content padder>
-          <Form>
+      <View style={{flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF'}}>
+        <LinearGradient
+        colors={['#B721FF', '#21D4FD']}
+        start={{ x: 1, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        style={{...StyleSheet.absoluteFillObject}}
+        >
+        <View style={{paddingTop:100, backgroundColor:'transparent'}}>
+          <Text style={{alignSelf:'center', fontSize:32, fontWeight:'bold', color:'white'}}>iMedicine</Text>
+        </View>
+        <View style={{paddingTop: 150, paddingHorizontal:20}}>
+          <Form style={{backgroundColor: 'transparent'}}>
             <Item>
-              <Input 
+              <Input
+                style={{color:'white'}}
                 value={this.state.name}
                 onChangeText={name =>this.setState({ name })}
                 placeholder="Name"
+                placeholderTextColor="#EEEEEE"
                 autoCorrect={false}
               />
             </Item>
             <Item>
-              <Input 
+              <Input
+                style={{color:'white'}}
                 secureTextEntry
                 value={this.state.password}
                 placeholder="password"
+                placeholderTextColor="#EEEEEE"
                 onChangeText={password =>this.setState({ password })} 
               />
             </Item>
-            <Button block onPress={this.handleSignin}>
+            <Button block onPress={this.handleSignin} style={{marginTop:20, backgroundColor: '#3F51B5'}}>
               <Text>SIGN IN</Text>
             </Button>
-            <Text style={{padding: 10,alignSelf: 'center'}} onPress={() => this.props.navigation.navigate('Signup')}>Don't have an account?</Text>                        
-          </Form>     
-        </Content>
-      </Container>
+            <Text style={{padding: 10,alignSelf: 'center', color:'white'}} onPress={() => this.props.navigation.navigate('Signup')}>Don't have an account?</Text>                        
+          </Form>  
+        </View>
+      </LinearGradient>
+      </View>
     )
   }
 }
