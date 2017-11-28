@@ -4,7 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Schedule from './schedule';
 
 export default StackNavigator({
-  Schedule: { screen: Schedule },
+  Schedule: {
+    screen: Schedule,
+  },
 }, {
   headerMode: 'none',
 });

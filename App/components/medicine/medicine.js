@@ -41,9 +41,14 @@ class Medicine extends Component {
                   <Icon name="trash" />
                 </Button>}
             />))}
+          {this.props.medicine.length === 0 && (
+            <View style={{ marginTop:20, flex: 1 }}>
+              <Text style={{ color:'#c9c9c9', alignSelf:'center' }}>No medicine yet</Text>
+            </View>
+          )}
           </ScrollView>
           <Fab
-            style={{backgroundColor: '#2196F3'}}
+            style={{backgroundColor: '#3F51B5'}}
             onPress={() => this.props.navigation.navigate('AddMedicine')}
           >
             <Icon size={25} color="white" name="add" />

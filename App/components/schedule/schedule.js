@@ -49,13 +49,7 @@ class Schedule extends Component{
 
   renderItem = (item) => {
     return (
-        <TouchableOpacity onPress={this.handleTaskClick.bind(this,item)} style={[styles.item, {height: item.height, backgroundColor:'transparent'}]}>
-          <LinearGradient
-            colors={['#B721FF', '#21D4FD']}
-            start={{ x: 1, y: 0 }}
-            end={{ x: 0, y: 1 }}
-            style={{...StyleSheet.absoluteFillObject}}
-          />
+        <TouchableOpacity onPress={this.handleTaskClick.bind(this,item)} style={[styles.item, {height: item.height, backgroundColor:'#3F51B5'}]}>
           <Text style={{color:'white', fontSize:14, fontWeight:'bold'}}>{item.time}</Text>
           <Text style={{color:'white'}} numberOfLines={1} ellipsizeMode="tail">{item.name}</Text>
           <Text style={{color:'white'}} numberOfLines={1} ellipsizeMode="tail" note>{item.description}</Text>
@@ -93,6 +87,15 @@ class Schedule extends Component{
           renderItem={this.renderItem.bind(this)}
           renderEmptyDate={this.renderEmptyDate.bind(this)}
           rowHasChanged={this.rowHasChanged.bind(this)}
+          theme={{
+            todayTextColor: '#3F51B5',
+            selectedDayBackgroundColor: '#3F51B5',
+            dayTextColor: '#3F51B5',
+            dotColor: '#3F51B5',
+            selectedDotColor: '#ffffff',
+            agendaTodayColor: '#3F51B5',
+            agendaKnobColor: '#3F51B5'
+          }}
         />
       </Container>
     );

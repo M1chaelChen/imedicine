@@ -70,8 +70,8 @@ class Login extends Component {
         alignItems: 'center',
         backgroundColor: '#F5FCFF'}}>
         <LinearGradient
-        colors={['#B721FF', '#21D4FD']}
-        start={{ x: 1, y: 0 }}
+        colors={['#3F51B5', '#21D4FD']}
+        start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={{...StyleSheet.absoluteFillObject}}
         >
@@ -100,8 +100,8 @@ class Login extends Component {
                 onChangeText={password =>this.setState({ password })} 
               />
             </Item>
-            <Button block onPress={this.handleSignin} style={{marginTop:20, backgroundColor: '#3F51B5'}}>
-              <Text>SIGN IN</Text>
+            <Button block rounded onPress={this.handleSignin} style={{marginTop:20, backgroundColor: 'white'}}>
+              <Text style={{color:'#03A9F4'}}>SIGN IN</Text>
             </Button>
             <Text style={{padding: 10,alignSelf: 'center', color:'white'}} onPress={() => this.props.navigation.navigate('Signup')}>Don't have an account?</Text>                        
           </Form>  

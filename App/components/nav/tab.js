@@ -18,16 +18,16 @@ export default TabNavigator({
     <Footer>
       <FooterTab>
         <Button vertical onPress={() => props.navigation.navigate('MedicineTab')} >
-          <Icon name="list-box" style={{ fontSize: 30 }} active={props.navigationState.index === 0} />
-          <Text>Medicine</Text>
+          <Icon name="list-box" style={{ color:'#3F51B5', fontSize: 30 }} active={props.navigationState.index === 0} />
+          <Text style={{color:'#3F51B5'}}>Medicine</Text>
         </Button>
         <Button vertical onPress={() => props.navigation.navigate('ScheduleTab')}>
-          <Icon name="calendar" style={{ fontSize: 30 }} active={props.navigationState.index === 1} />
-          <Text>Schedule</Text>
+          <Icon name="calendar" style={{ color:'#3F51B5', fontSize: 30 }} active={props.navigationState.index === 1} />
+          <Text style={{color:'#3F51B5'}}>Schedule</Text>
         </Button>
         <Button vertical onPress={() => props.navigation.navigate('ProfileTab')}>
-          <Icon name="person" style={{ fontSize: 30 }} active={props.navigationState.index === 2} />
-          <Text>Profile</Text>
+          <Icon name="person" style={{ color:'#3F51B5', fontSize: 30 }} active={props.navigationState.index === 2} />
+          <Text style={{color:'#3F51B5'}}>Profile</Text>
         </Button>
       </FooterTab>
     </Footer>

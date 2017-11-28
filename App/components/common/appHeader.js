@@ -7,7 +7,7 @@ const AppHeader = props => (
       <Left>
       </Left>
       <Body>
-          <Title>{props.title}</Title>
+          <Title style={{color:'#3F51B5'}}>{props.title}</Title>
       </Body>
       <Right />
   </Header>
