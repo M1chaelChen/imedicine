@@ -9,10 +9,10 @@ export default StackNavigator({
       header: null,
     },
   },
-  Signup: {
-    screen: Signup,
-    navigationOptions: {
-      title: 'Create Account',
-    },
-  },
+  // Signup: {
+  //   screen: Signup,
+  //   navigationOptions: {
+  //     title: 'Create Account',
+  //   },
+  // },
 });

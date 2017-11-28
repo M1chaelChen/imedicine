@@ -82,7 +82,7 @@ class AddMedicine extends Component {
                 },
                 // ... You can check the source to find the other keys.
               }}
-              iconComponent={<Icon size={30} name='date-range'/>}
+              iconComponent={<Icon color="#3F51B5" size={30} name='date-range'/>}
             />
           </Item>
           <Button block rounded style={{marginTop:20, backgroundColor: '#3F51B5'}} onPress={this.handleAddMedicine}>

@@ -1,10 +1,15 @@
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import UserScreen from '../users';
+import Login from '../users/login';
 import React, { Component } from 'react';
 import TabNavigation from './tab';
 
 export default RootNavigation = StackNavigator({
-    User: {screen:UserScreen},
+    Login: {
+        screen: Login,
+        navigationOptions: {
+          header: null,
+        },
+    },
     Home: {screen:TabNavigation}
 },{
     headerMode: 'none',

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Alert, View} from 'react-native';
+import {StyleSheet, Alert, View, StatusBar} from 'react-native';
 import { Container, Header, Content, Button, Form, Text, Item, Input, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
@@ -60,17 +60,25 @@ class Login extends Component {
       type: ActionTypes.LOGIN,
       user
     })
-    this.props.navigation.navigate('Home')
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Home'}),
+      ],
+    });
+    this.props.navigation.dispatch(resetAction);
   }
 
   render(){
     return(
       <View style={{flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF'}}>
+        alignItems: 'center'}}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <LinearGradient
-        colors={['#3F51B5', '#21D4FD']}
+        colors={['#3F51B5', '#5C6BC0']}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={{...StyleSheet.absoluteFillObject}}
@@ -101,7 +109,7 @@ class Login extends Component {
               />
             </Item>
             <Button block rounded onPress={this.handleSignin} style={{marginTop:20, backgroundColor: 'white'}}>
-              <Text style={{color:'#03A9F4'}}>SIGN IN</Text>
+              <Text style={{color:'#3F51B5'}}>SIGN IN</Text>
             </Button>
             <Text style={{padding: 10,alignSelf: 'center', color:'white'}} onPress={() => this.props.navigation.navigate('Signup')}>Don't have an account?</Text>                        
           </Form>  
