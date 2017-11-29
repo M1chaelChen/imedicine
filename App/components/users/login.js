@@ -47,7 +47,7 @@ class Login extends Component {
 
   componentDidMount() {
     PushNotification.localNotificationSchedule({
-      message: "My Notification Message", // (required)
+      message: "Time to take your medicine", // (required)
       date: new Date(Date.now() + (5 * 1000)) // in 60 secs
     });
   }
